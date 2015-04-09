@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayudh Das | Portfolio</title>
+    <link rel="stylesheet" href="css/basic.css">
+</head>
+
+<body>
+    <!-- Personal Info -->
+    <div id="headerDiv" ng-app="headerApp" ng-controller="headerController">
+        <h1>{{name}}</h1>
+        <p>{{email}}</p>
+        <p>{{city}}</p>
+    </div>
+    <!-- WorkEx section -->
+    <div id="workExperienceDiv" ng-app="workExApp" ng-controller="workExController">
+        <h2>Work Experience</h2>
+        <div ng-repeat="workEx in workExs">
+            <h4>{{workEx.organisation}}</h4>
+            <p>{{workEx.url}}</p>
+            <p>Role: {{workEx.role}}</p>
+            <p>{{workEx.from}} - {{workEx.till}}</p>
+            <p>{{workEx.description}}</p>
+        </div>
+    </div>
+    <!-- Education section -->
+    <div id="educationDiv" ng-app="eduApp" ng-controller="eduController">
+        <h2>Education</h2>
+        <div ng-repeat="education in educations">
+            <h4>{{education.degree}}</h4>
+            <p>{{education.board}}</p>
+            <p>{{education.institute}}, {{education.city}}, {{education.state}}</p>
+            <p>Score: {{education.score}}</p>
+            <p>{{education.year}}</p>
+        </div>
+    </div>
+    <!-- Skills section -->
+    <div id="skillsDiv" ng-app="skillsApp" ng-controller="skillsController">
+        <h2>Skills</h2>
+        <h3>Domains</h3>
+        <ul>
+            <li ng-repeat="area in areas">{{area}}</li>
+        </ul>
+        <h3>Programming languages</h3>
+        <ul>
+            <li ng-repeat="lang in langs">{{lang}}</li>
+        </ul>
+        <h3>Tools</h3>
+        <h4>IDEs and editors</h4>
+        <ul>
+            <li ng-repeat="editor in editors">{{editor}}</li>
+        </ul>
+        <h4>Frameworks</h4>
+        <ul>
+            <li ng-repeat="framework in frameworks">{{framework}}</li>
+        </ul>
+        <h4>Version Control</h4>
+        <ul>
+            <li ng-repeat="vcs in vcss">{{vcs}}</li>
+        </ul>
+        <h4>DBMS</h4>
+        <ul>
+            <li ng-repeat="dbms in dbmss">{{dbms}}</li>
+        </ul>
+    </div>
+    <!-- Projects section -->
+    <div id="projectsDiv" ng-app="projectsApp" ng-controller="projectsController">
+        <h2>Projects</h2>
+        <div ng-repeat="project in projects">
+        </div>
+    </div>
+    <!-- Hobbies section -->
+    <div id="hobbiesDiv" ng-app="hobbiesApp" ng-controller="hobbiesController">
+        <h2>Hobbies and Interests</h2>
+        <ul>
+            <li ng-repeat="hobby in hobbies">{{hobby}}</li>
+        </ul>
+    </div>
+    <!-- End of content -->
+    <script src="resume.json"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/resumeApp.js"></script>
+</body>
+</html>
